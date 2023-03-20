@@ -8,3 +8,11 @@ jobs:
     - name: This is a step
       run: |
         echo "This is a basic workflow"
+  independent:
+    name: Second Job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: This is a another step in another workflow
+      run: |
+        echo "This is a basic workflow"
