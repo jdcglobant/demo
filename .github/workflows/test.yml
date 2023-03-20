@@ -1,18 +1,30 @@
 on: [push]
 jobs:
   build:
-    name: My first workflow
+    name: My first Job
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: This is a step
       run: |
         echo "This is a basic workflow"
+    - name: This is a second step
+      run: |
+        echo " Second step on build"
   independent:
     name: Second Job
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: This is a another step in another workflow
+    - name: This is a another step in another workflow, usually tool like sonarqube
       run: |
         echo "This is a basic workflow"
+  deploy:
+    name: Third Job
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: This job can be something like deploy, it depends o the build part
+      run: |
+        echo "Fake Deploy"
