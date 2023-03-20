@@ -1,10 +1,10 @@
 on: [push]
 jobs:
   build:
-  name: My first workflow
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v2
-  - name: This is a step
-    run: |
-      echo "This is a basic workflow"
+    name: My first workflow
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: This is a step
+      run: |
+        echo "This is a basic workflow"
