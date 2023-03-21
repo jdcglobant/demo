@@ -13,7 +13,7 @@ jobs:
         echo " Second step on build"
     - name: Third Step showing vars and secrets
       run: |
-        echo "This MY_VAR $MY_VAR"
+        echo "This MY_VAR ${{env.MY_VAR}}"
         echo "This MY_SECRET ${{secrets.MY_SECRET}}"
   independent:
     name: Second Job
