@@ -3,6 +3,8 @@ jobs:
   build:
     name: My first Job
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     steps:
     - uses: actions/checkout@v2
     - name: This is a step
