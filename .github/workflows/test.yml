@@ -11,6 +11,10 @@ jobs:
     - name: This is a second step
       run: |
         echo " Second step on build"
+    - name: Third Step showing vars and secrets
+      run: |
+        echo "This MY_VAR $MY_VAR"
+        echo "This MY_SECRET ${{secrets.MY_SECRET}}"
   independent:
     name: Second Job
     runs-on: ubuntu-latest
